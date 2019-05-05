@@ -1,4 +1,6 @@
 import discord
+import time
+import asyncio
 
 def read_token():
     with open("token.txt", "r") as f:
