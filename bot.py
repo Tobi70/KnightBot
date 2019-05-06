@@ -24,7 +24,7 @@ async def on_message(message):
 
     if message.content.startswith("!roominfo"):
         roominfo = discord.Embed(title= 'test', description='test', colour=3447003)
-        roominfo.add_field(name= '', value= 'Popp Martin Student Union 252')
+        roominfo.add_field(name='', value='Popp Martin Student Union 252')
 
         await message.channel.send(embed=roominfo)
 
