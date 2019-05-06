@@ -13,9 +13,21 @@ token = read_token()
 client = discord.Client()
 
 @client.event
+async def on_member_join(member):
+    role = discord.utils.get(member.server.roles, name= "President" )
+    await client.add_roles(member, role)
+
+@client.event
 async def on_message(message):
     if message.content.find("!hello") != -1:
         await message.channel.send("Hi")
+
+    if message.content.startswith("!roominfo"):
+        roominfo = discord.Embed(title= 'test', description='test', colour=3447003)
+        roominfo.add_field(name= '', value= 'Popp Martin Student Union 252')
+
+        await message.channel.send(embed=roominfo)
+
 
 
 client.run(token)
